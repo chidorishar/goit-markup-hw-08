@@ -1,0 +1,32 @@
+@mixin flex-grid-container($marginTop, $marginLeft, $allowWarp: false) {
+  display: flex;
+
+  @if $allowWarp {
+    flex-wrap: wrap;
+  }
+  margin-top: -1 * $marginTop;
+  margin-left: -1 * $marginLeft;
+}
+
+@mixin flex-grid-item(
+  $marginTop,
+  $marginLeft,
+  $width: 0px,
+  $height: 0px,
+  $allowResize: false,
+  $quantityInRow: 0,
+  $max-width: max-content,
+  $min-width: min-content
+) {
+  margin-top: $marginTop;
+  margin-left: $marginLeft;
+
+  @if $allowResize {
+    flex-basis: calc(100% / $quantityInRow - $marginLeft);
+    max-width: $max-width;
+    min-width: $min-width;
+  } @else {
+    width: $width;
+    height: $height;
+  }
+}

@@ -1,0 +1,18 @@
+.logo {
+  @extend %clean-link;
+
+  font-family: getFontFamily('secondary');
+  font-weight: getFontWeight('bold');
+  font-size: 26px;
+  line-height: 1.17;
+
+  color: getColorFromPalette('accent', 'light');
+}
+
+.logo__second-word {
+  color: getColorFromPalette('accent', 'dark');
+}
+
+.logo__second-word--light {
+  color: getColorFromPalette('primary', 'light');
+}

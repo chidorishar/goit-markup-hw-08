@@ -1,0 +1,150 @@
+%button {
+  font-family: inherit;
+  font-weight: getFontWeight('medium');
+  font-size: 16px;
+  line-height: 1.625;
+  letter-spacing: inherit;
+
+  border-radius: 4px;
+  min-width: 73px;
+  padding: 6px 22px;
+
+  background-color: getColorFromPalette('background', 'light');
+  border-width: 0px;
+  color: getColorFromPalette('primary', 'dark');
+
+  &:hover,
+  &:focus {
+    background-color: getColorFromPalette('accent', 'light');
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: getColorFromPalette('primary', 'light');
+
+    cursor: pointer;
+  }
+}
+
+%button--main {
+  @extend %button;
+
+  font-weight: getFontWeight('bold');
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+
+  padding: 10px 32px;
+
+  background-color: getColorFromPalette('accent', 'light');
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: getColorFromPalette('primary', 'light');
+
+  transition: createTransitionFor('background-color');
+
+  &:hover,
+  &:focus {
+    background-color: getColorFromPalette('accent', 'additional');
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+%clean-link {
+  text-decoration: none;
+  font-style: normal;
+
+  // color: currentColor;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+%clean-link--interactive {
+  @extend %clean-link;
+
+  transition: createTransitionFor('color');
+
+  &:hover,
+  &:focus {
+    color: getColorFromPalette('accent', 'light');
+  }
+}
+
+%flex {
+  display: flex;
+}
+
+%flex--h-centred {
+  @extend %flex;
+
+  justify-content: center;
+}
+
+%flex--v-centred {
+  @extend %flex;
+
+  align-items: center;
+}
+
+%flex--vh-centred {
+  @extend %flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+%input {
+  height: $input-height;
+
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+
+  transition: createTransitionFor('border-color');
+
+  &:focus,
+  &:active {
+    border-color: getColorFromPalette('accent', 'light');
+  }
+}
+
+%icon {
+  fill: currentColor;
+}
+
+%icon--interactive {
+  @extend %icon;
+
+  transition: createTransitionFor('color');
+}
+
+%section {
+  padding-top: $sectionsDefaultTBPaddings;
+  padding-bottom: $sectionsDefaultTBPaddings;
+}
+
+%title {
+  font-weight: getFontWeight('bold');
+  font-size: 36px;
+  line-height: 1.17;
+
+  text-align: center;
+  margin-bottom: 50px;
+
+  color: getColorFromPalette('primary', 'dark');
+}
+
+%unmarked-list {
+  list-style: none;
+}
+
+%visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

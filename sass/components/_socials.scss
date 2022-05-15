@@ -1,0 +1,28 @@
+.socials {
+  @extend %unmarked-list;
+
+  @include flex-grid-container(10px, 10px, true);
+}
+
+.socials__social {
+  @include flex-grid-item(10px, 10px, 44px, 44px, false);
+}
+
+.socials__link {
+  @extend %flex--vh-centred;
+  @extend %icon;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  color: getColorFromPalette('icons', 'main');
+
+  transition: createTransitionFor('background-color' 'color');
+
+  &:hover,
+  &:focus {
+    background-color: getColorFromPalette('accent', 'light');
+    color: getColorFromPalette('primary', 'light');
+  }
+}

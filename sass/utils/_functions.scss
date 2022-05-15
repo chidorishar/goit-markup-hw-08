@@ -1,0 +1,34 @@
+@function createTransitionFor(
+  $types,
+  $duration: getTransitionData('time'),
+  $timeFunction: getTransitionData('timeFunction')
+) {
+  $compoundValue: '';
+
+  @each $type in $types {
+    $compoundValue: #{$compoundValue} #{$type} #{$duration} #{$timeFunction};
+    @if $type != nth($types, -1) {
+      $compoundValue: #{$compoundValue}',';
+    }
+  }
+
+  @return $compoundValue;
+}
+
+@function getColorFromPalette($group, $type) {
+  $subMap: map-get($colorPalette, $group);
+
+  @return map-get($subMap, $type);
+}
+
+@function getFontWeight($name) {
+  @return map-get($fontWeights, $name);
+}
+
+@function getFontFamily($name) {
+  @return map-get($fontFamilies, $name) #{','} #{$fontFamilyFallback};
+}
+
+@function getTransitionData($dataName) {
+  @return map-get($transitionData, $dataName);
+}

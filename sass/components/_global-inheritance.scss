@@ -1,0 +1,10 @@
+body {
+  font-family: getFontFamily('main');
+  font-weight: getFontWeight('regular');
+  font-size: 14px;
+  line-height: 1.72;
+  letter-spacing: 0.03em;
+
+  background-color: getColorFromPalette('primary', 'light');
+  color: getColorFromPalette('primary', 'additional');
+}

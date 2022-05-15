@@ -1,0 +1,132 @@
+.footer {
+  padding: 60px 0;
+
+  background-color: getColorFromPalette('background', 'dark');
+}
+
+.footer__container {
+  @extend %flex;
+  align-items: flex-start;
+}
+
+//#region INFO
+
+.footer__studio-info {
+  margin-right: 70px;
+}
+
+.footer__logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.footer__addresses-list {
+  @extend %unmarked-list;
+  line-height: 1.71;
+
+  color: getColorFromPalette('primary', 'light');
+}
+
+.footer__address {
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  &:not(:nth-child(1)) {
+    color: rgba(getColorFromPalette('primary', 'light'), $alpha: 0.6);
+  }
+}
+
+.footer__address-link {
+  @extend %clean-link--interactive;
+}
+//#endregion INFO
+
+//#region local placeholders
+%local-subtitle {
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+%local-wrapper {
+  padding-top: 12px;
+
+  color: getColorFromPalette('primary', 'light');
+}
+//#endregion local placeholders
+
+//#region FOLLOW US
+.footer__follow-us {
+  @extend %local-wrapper;
+
+  margin-right: 93px;
+}
+
+.footer__follow-subtitle {
+  @extend %local-subtitle;
+}
+
+.footer__socials-link {
+  background-color: rgba(getColorFromPalette('primary', 'light'), $alpha: 0.1);
+  color: getColorFromPalette('primary', 'light');
+}
+//#endregion FOLLOW US
+
+//#region SUBSCRIBE
+.footer__subscribe {
+  @extend %local-wrapper;
+
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 570px;
+  min-width: 450px;
+  margin-bottom: -20px;
+}
+
+.footer__subscribe-subtitle {
+  @extend %local-subtitle;
+}
+
+.footer__mail-input {
+  @extend %input;
+
+  flex-shrink: 0;
+  flex-grow: 1;
+  min-width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  margin-bottom: 20px;
+  padding-left: 16px;
+
+  border: 1px solid rgba(getColorFromPalette('primary', 'light'), $alpha: 0.3);
+  background-color: transparent;
+  box-shadow: 0px 4px 4px 0px rgba(getColorFromPalette('accent', 'dark'), $alpha: 0.15);
+  color: inherit;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+
+    color: rgba(getColorFromPalette('primary', 'light'), $alpha: 0.6);
+  }
+}
+
+.footer__button-send {
+  @extend %button--main;
+  @extend %flex--v-centred;
+
+  margin-bottom: 20px;
+  $padding-r-l: 28px;
+  padding-right: $padding-r-l;
+  padding-left: $padding-r-l;
+}
+
+.footer__button-icon {
+  @extend %icon;
+
+  margin-left: 10px;
+}
+//#endregion SUBSCRIBE

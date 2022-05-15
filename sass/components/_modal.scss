@@ -1,0 +1,201 @@
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+
+  background-color: rgba(getColorFromPalette('accent', 'dark'), $alpha: 0.2);
+  opacity: 1;
+
+  transition: createTransitionFor('opacity');
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 528px;
+  min-width: min-content;
+  width: 80%;
+  min-height: 581px;
+  padding: 40px;
+
+  border-radius: 4px;
+
+  background-color: getColorFromPalette('primary', 'light');
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  color: getColorFromPalette('primary', 'additional');
+
+  transform: translate(-50%, -50%) scale(1, 1);
+  transition: createTransitionFor('transform');
+
+  .modal.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.1, 0.1);
+
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+.modal__close-button {
+  @extend %flex--vh-centred;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(getColorFromPalette('accent', 'dark'), $alpha: 0.1);
+  border-radius: 50%;
+
+  background-color: inherit;
+  color: getColorFromPalette('accent', 'dark');
+
+  transition: createTransitionFor('color');
+
+  &:hover,
+  &:focus {
+    color: getColorFromPalette('accent', 'light');
+  }
+}
+
+.modal__close-icon {
+  @extend %icon;
+}
+
+.modal__subtitle {
+  font-size: 20px;
+  line-height: 1.17;
+
+  margin-bottom: 12px;
+
+  color: getColorFromPalette('primary', 'dark');
+}
+
+.modal__request-form {
+  @extend %flex--v-centred;
+
+  flex-direction: column;
+}
+
+.modal__fields {
+  @extend %unmarked-list;
+
+  text-align: left;
+
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.modal__field {
+  position: relative;
+
+  color: getColorFromPalette('primary', 'dark');
+}
+
+.modal__input-label {
+  font-size: 12px;
+  line-height: 1.16;
+
+  display: block;
+  margin-bottom: 4px;
+
+  color: getColorFromPalette('primary', 'additional');
+}
+
+.modal__input {
+  @extend %input;
+
+  $input-height: 40px;
+
+  display: block;
+  width: 100%;
+  padding-left: 42px;
+
+  border-color: rgba(getColorFromPalette('primary', 'dark'), $alpha: 0.2);
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.modal__input--commentary {
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+
+  &::placeholder {
+    color: rgba(getColorFromPalette('primary', 'additional'), $alpha: 0.5);
+  }
+}
+
+.modal__input-icon {
+  position: absolute;
+  left: 12px;
+  bottom: calc(0px + $input-height / 2);
+  transform: translate(0, 50%);
+
+  fill: currentColor;
+
+  transition: createTransitionFor('fill');
+
+  .modal__input:active + &,
+  .modal__input:focus + & {
+    fill: getColorFromPalette('accent', 'light');
+  }
+}
+
+.modal__agree-label {
+  @extend %flex--v-centred;
+
+  text-align: left;
+
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.modal__agree-checkbox {
+  @extend %visually-hidden;
+}
+
+.modal__agree-icon {
+  flex-shrink: 0;
+  margin-right: 8px;
+
+  border: 2px solid getColorFromPalette('primary', 'dark');
+  border-radius: 2px;
+  fill: transparent;
+
+  transition: createTransitionFor('background-color' 'border-width' 'fill');
+
+  .modal__agree-checkbox:focus + & {
+    background-color: rgba(getColorFromPalette('accent', 'light'), $alpha: 0.5);
+    border-style: dotted;
+  }
+
+  .modal__agree-checkbox:checked + & {
+    background-color: getColorFromPalette('accent', 'light');
+    border-width: 0px;
+    fill: getColorFromPalette('primary', 'light');
+  }
+}
+
+.modal__agreements-link {
+  color: getColorFromPalette('accent', 'light');
+}
+
+.modal__send-button {
+  @extend %button--main;
+
+  padding-right: 55px;
+  padding-left: 55px;
+  margin-bottom: 0px;
+}

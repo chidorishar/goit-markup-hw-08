@@ -1,0 +1,50 @@
+.section-team {
+  @extend %section;
+
+  font-size: 16px;
+  line-height: 1.17;
+  text-align: center;
+
+  background-color: getColorFromPalette('background', 'light');
+}
+
+.section-team__section-title {
+  @extend %title;
+}
+
+.section-team__team-list {
+  @extend %unmarked-list;
+
+  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin);
+}
+
+.section-team__card {
+  @include flex-grid-item(
+    $itemsDefaultMargin,
+    $itemsDefaultMargin,
+    $allowResize: true,
+    $quantityInRow: 4
+  );
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+  background-color: getColorFromPalette('primary', 'light');
+}
+
+.section-team__card-meta {
+  padding: 30px 32px;
+}
+
+.section-team__meta-subtitle {
+  font-weight: getFontWeight('medium');
+  font-size: inherit;
+
+  margin-bottom: 10px;
+
+  color: getColorFromPalette('primary', 'dark');
+}
+
+.section-team__meta-description {
+  margin-bottom: 16px;
+}

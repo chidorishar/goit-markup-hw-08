@@ -1,0 +1,116 @@
+.section-portfolio {
+  @extend %section;
+
+  margin: 0;
+  padding: 94px 0;
+}
+
+.section-portfolio__section-title {
+  @extend %visually-hidden;
+}
+
+.section-portfolio__filters {
+  @extend %unmarked-list;
+  @extend %flex--vh-centred;
+
+  margin-bottom: 50px;
+}
+
+.section-portfolio__filter {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.section-portfolio__button-filter {
+  @extend %button;
+}
+
+.section-portfolio__button-filter--active {
+  background-color: getColorFromPalette('accent', 'light');
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  color: getColorFromPalette('primary', 'light');
+}
+
+.section-portfolio__projects {
+  @extend %unmarked-list;
+
+  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+}
+
+.section-portfolio__card {
+  @include flex-grid-item(
+    $itemsDefaultMargin,
+    $itemsDefaultMargin,
+    $allowResize: true,
+    $quantityInRow: 3
+  );
+}
+
+.section-portfolio__card-link {
+  @extend %clean-link;
+
+  display: block;
+
+  transition: createTransitionFor('box-shadow');
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.section-portfolio__img-wrapper {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.section-portfolio__proj-details {
+  font-size: 18px;
+  line-height: 1.55;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  padding: 17% 24px;
+
+  background-color: rgba(getColorFromPalette('accent', 'light'), $alpha: 0.9);
+  color: getColorFromPalette('primary', 'light');
+  overflow: auto;
+
+  transition: createTransitionFor('transform');
+
+  .section-portfolio__card-link:hover &,
+  .section-portfolio__card-link:focus & {
+    transform: translateY(0);
+  }
+}
+
+.section-portfolio__card-meta {
+  padding: 20px 24px;
+
+  border: 1px solid #eee;
+  border-top: none;
+}
+
+.section-portfolio__meta-subtitle {
+  font-weight: getFontWeight('bold');
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+
+  margin-bottom: 4px;
+
+  color: getColorFromPalette('primary', 'dark');
+}
+
+.section-portfolio__meta-description {
+  font-size: 16px;
+  line-height: 1.875;
+}

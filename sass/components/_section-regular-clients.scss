@@ -1,0 +1,45 @@
+.section-clients {
+  @extend %section;
+}
+
+.section-clients__section-title {
+  @extend %title;
+}
+
+.section-clients__clients-list {
+  @extend %unmarked-list;
+
+  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+}
+
+.section-clients__client {
+  @include flex-grid-item(
+    $itemsDefaultMargin,
+    $itemsDefaultMargin,
+    $allowResize: true,
+    $quantityInRow: 6,
+    $max-width: 100%
+  );
+}
+
+.section-clients__link {
+  @extend %flex--vh-centred;
+
+  height: 92px;
+
+  border: 1px solid getColorFromPalette('icons', 'main');
+  border-radius: 4px;
+  color: getColorFromPalette('icons', 'main');
+
+  transition: createTransitionFor('border-color' 'color');
+
+  &:hover,
+  &:focus {
+    border-color: getColorFromPalette('accent', 'light');
+    color: getColorFromPalette('accent', 'light');
+  }
+}
+
+.section-clients__icon {
+  @extend %icon;
+}

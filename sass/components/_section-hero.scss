@@ -1,0 +1,33 @@
+.section-hero {
+  @extend %section;
+
+  text-align: center;
+  padding: 200px 0;
+  margin: 0 auto;
+  min-width: $containerWidth;
+  max-width: 1600px;
+
+  background-color: getColorFromPalette('background', 'additional');
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/decoration/hero-bg.jpg);
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: getColorFromPalette('primary', 'light');
+}
+
+.section-hero__section-title {
+  font-weight: getFontWeight('black');
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  margin: 0 auto 30px;
+  max-width: 696px;
+}
+
+.section-hero__button {
+  @extend %button--main;
+}

@@ -5,11 +5,14 @@ const modalControls = {
   openModalBtn: document.getElementById('section-hero__button'),
   closeModalBtn: document.getElementById('modal__close-button'),
 };
+const menuToggle = document.getElementById('toggle-menu');
+const header = document.getElementById('header');
 
 filters.forEach(f => f.addEventListener('click', onFiltersClick));
 Object.keys(modalControls).forEach(key =>
   modalControls[key].addEventListener('click', toggleModal)
 );
+menuToggle.addEventListener('click', toggleMenu);
 
 function onFiltersClick() {
   // unhide previously hidden cards
@@ -31,4 +34,9 @@ function onFiltersClick() {
 
 function toggleModal() {
   modal.classList.toggle('is-hidden');
+}
+
+function toggleMenu() {
+  menuToggle.classList.toggle('is-touched');
+  header.classList.toggle('is-fullscreen');
 }

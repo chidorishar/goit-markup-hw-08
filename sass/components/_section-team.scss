@@ -15,16 +15,35 @@
 .section-team__team-list {
   @extend %unmarked-list;
 
-  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin);
+  @include mediaOver('tablet') {
+    @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+  }
 }
 
 .section-team__card {
-  @include flex-grid-item(
-    $itemsDefaultMargin,
-    $itemsDefaultMargin,
-    $allowResize: true,
-    $quantityInRow: 4
-  );
+  @include mediaUpTo('tablet') {
+    &:not(:last-child) {
+      margin-bottom: $itemsDefaultMargin;
+    }
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 2
+    );
+  }
+
+  @include mediaOver('desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 4
+    );
+  }
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);

@@ -2,6 +2,10 @@
   @extend %section;
 
   padding-top: 0;
+
+  @include mediaUpTo('desktop') {
+    display: none;
+  }
 }
 
 .section-services__section-title {

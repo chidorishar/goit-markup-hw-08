@@ -15,6 +15,10 @@
   @return $compoundValue;
 }
 
+@function getBreakpointValue($bpName) {
+  @return map-get($breakpoints, $bpName);
+}
+
 @function getColorFromPalette($group, $type) {
   $subMap: map-get($colorPalette, $group);
 

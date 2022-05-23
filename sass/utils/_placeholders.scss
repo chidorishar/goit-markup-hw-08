@@ -117,8 +117,15 @@
 }
 
 %section {
-  padding-top: $sectionsDefaultTBPaddings;
-  padding-bottom: $sectionsDefaultTBPaddings;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include mediaOver('desktop') {
+    padding-top: $sectionsDefaultTBPaddings;
+    padding-bottom: $sectionsDefaultTBPaddings;
+  }
+
+  background-color: getColorFromPalette('primary', 'light');
 }
 
 %title {

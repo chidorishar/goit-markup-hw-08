@@ -13,13 +13,35 @@
 }
 
 .section-clients__client {
-  @include flex-grid-item(
-    $itemsDefaultMargin,
-    $itemsDefaultMargin,
-    $allowResize: true,
-    $quantityInRow: 6,
-    $max-width: 100%
-  );
+  @include mediaUpTo('tablet') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 2,
+      $max-width: 100%
+    );
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 3,
+      $max-width: 100%
+    );
+  }
+
+  @include mediaOver('desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 6,
+      $max-width: 100%
+    );
+  }
 }
 
 .section-clients__link {

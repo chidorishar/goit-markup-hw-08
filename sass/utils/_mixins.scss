@@ -1,3 +1,8 @@
+@mixin flex--v-centred {
+  display: flex;
+  align-items: center;
+}
+
 @mixin flex-grid-container($marginTop, $marginLeft, $allowWarp: false) {
   display: flex;
 
@@ -28,5 +33,41 @@
   } @else {
     width: $width;
     height: $height;
+  }
+}
+
+@mixin mediaUpTo($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (max-width: (map-get($breakpoints, $bp) - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $bp) {
+      @content;
+    }
+  }
+}
+
+@mixin mediaOver($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (min-width: map-get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}
+
+@mixin mediaInBetween($bpFrom, $bpTo) {
+  @if map-has-key($breakpoints, $bpFrom) and map-has-key($breakpoints, $bpTo) {
+    @media screen and (min-width: map-get($breakpoints, $bpFrom)) and (max-width: (map-get($breakpoints, $bpTo) - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: ($bpFrom + 1)) and (max-width: ($bpTo - 1)) {
+      @content;
+    }
   }
 }

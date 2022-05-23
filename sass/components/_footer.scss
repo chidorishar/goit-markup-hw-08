@@ -77,9 +77,9 @@
 
 //#region SUBSCRIBE
 .footer__subscribe {
+  @extend %flex;
   @extend %local-wrapper;
 
-  display: flex;
   flex-wrap: wrap;
   max-width: 570px;
   min-width: 450px;

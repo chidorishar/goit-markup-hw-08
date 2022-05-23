@@ -9,16 +9,35 @@
 .section-advantages__advantages-list {
   @extend %unmarked-list;
 
-  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+  @include mediaOver('tablet') {
+    @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+  }
 }
 
 .section-advantages__advantage {
-  @include flex-grid-item(
-    $itemsDefaultMargin,
-    $itemsDefaultMargin,
-    $allowResize: true,
-    $quantityInRow: 4
-  );
+  @include mediaUpTo('tablet') {
+    &:not(:last-child) {
+      margin-bottom: $itemsDefaultMargin;
+    }
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 2
+    );
+  }
+
+  @include mediaOver('desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 4
+    );
+  }
 }
 
 .section-advantages__icon-wrapper {
@@ -41,4 +60,8 @@
   margin-bottom: 10px;
 
   color: getColorFromPalette('primary', 'dark');
+
+  @include mediaUpTo('desktop') {
+    text-align: center;
+  }
 }

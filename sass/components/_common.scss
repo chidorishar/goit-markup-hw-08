@@ -1,7 +1,16 @@
 .container {
-  width: $containerWidth;
+  @include mediaUpTo('tablet') {
+    width: (getBreakpointValue('mobile'));
+  }
+  @include mediaInBetween('tablet', 'desktop') {
+    width: (getBreakpointValue('tablet'));
+  }
+  @include mediaOver('desktop') {
+    width: (getBreakpointValue('desktop') - $containerLRPaddings * 2);
+  }
+
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 $containerLRPaddings;
 }
 
 .hidden {

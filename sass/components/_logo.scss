@@ -1,12 +1,26 @@
+// @include mediaUpTo('tablet') {
+//   width: (getBreakpointValue('mobile') - $containerLRPaddings * 2);
+// }
+// @include mediaInBetween('tablet', 'desktop') {
+//   width: (getBreakpointValue('tablet') - $containerLRPaddings * 2);
+// }
+// @include mediaOver('desktop') {
+//   width: (getBreakpointValue('desktop') - $containerLRPaddings * 2);
+// }
+
 .logo {
   @extend %clean-link;
 
   font-family: getFontFamily('secondary');
   font-weight: getFontWeight('bold');
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.17;
 
   color: getColorFromPalette('accent', 'light');
+
+  @include mediaOver('desktop') {
+    font-size: 26px;
+  }
 }
 
 .logo__second-word {

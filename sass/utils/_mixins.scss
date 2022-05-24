@@ -27,7 +27,7 @@
   margin-left: $marginLeft;
 
   @if $allowResize {
-    flex-basis: calc(100% / $quantityInRow - $marginLeft);
+    width: calc(100% / $quantityInRow - $marginLeft);
     max-width: $max-width;
     min-width: $min-width;
   } @else {

@@ -21,9 +21,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 528px;
-  min-width: min-content;
-  width: 80%;
+  width: calc(100% - $containerLRPaddings * 2);
+  min-width: 320px;
+  max-width: getBreakpointValue('mobile') - $containerLRPaddings * 2;
   min-height: 581px;
   padding: 40px;
 
@@ -42,6 +42,20 @@
 
     pointer-events: none;
     visibility: hidden;
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    width: getBreakpointValue('mobile') - $containerLRPaddings * 2;
+  }
+
+  @include mediaUpTo('desktop') {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  @include mediaOver('desktop') {
+    width: 80%;
+    max-width: 528px;
   }
 }
 
@@ -73,11 +87,16 @@
 
 .modal__subtitle {
   font-size: 20px;
-  line-height: 1.17;
+  line-height: 1.5;
+  text-align: center;
 
   margin-bottom: 12px;
 
   color: getColorFromPalette('primary', 'dark');
+
+  @include mediaOver('desktop') {
+    line-height: 1.17;
+  }
 }
 
 .modal__request-form {
@@ -168,7 +187,7 @@
 
 .modal__agree-icon {
   flex-shrink: 0;
-  margin-right: 8px;
+  margin-right: 7px;
 
   border: 2px solid getColorFromPalette('primary', 'dark');
   border-radius: 2px;

@@ -7,7 +7,7 @@
     width: (getBreakpointValue('tablet'));
   }
   @include mediaOver('desktop') {
-    width: (getBreakpointValue('desktop') - $containerLRPaddings * 2);
+    width: (getBreakpointValue('desktop'));
   }
 
   margin: 0 auto;

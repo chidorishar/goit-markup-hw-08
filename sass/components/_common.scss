@@ -1,6 +1,7 @@
 .container {
   @include mediaUpTo('tablet') {
-    width: (getBreakpointValue('mobile'));
+    min-width: 320px;
+    max-width: (getBreakpointValue('mobile'));
   }
   @include mediaInBetween('tablet', 'desktop') {
     width: (getBreakpointValue('tablet'));

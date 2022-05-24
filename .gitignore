@@ -1,3 +1,4 @@
 ﻿.prettierrc.json
 images/decoration/svg-sources
 .vscode
+*.zip

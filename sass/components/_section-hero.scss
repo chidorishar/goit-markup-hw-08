@@ -3,26 +3,31 @@
 
   text-align: center;
   margin: 0 auto;
+  max-width: 480px;
 
   background-color: getColorFromPalette('background', 'additional');
+  background-image: $heroGradient, url(../images/decoration/hero-bg_mobile.jpg);
   background-clip: border-box;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 480px auto;
+  object-fit: cover;
 
   color: getColorFromPalette('primary', 'light');
 
-  @include mediaUpTo('tablet') {
-    max-width: 480px;
-
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../images/decoration/hero-bg_mobile.jpg);
+  @include mediaScreenDensity2x {
+    background-image: $heroGradient, url(../images/decoration/hero-bg_mobile@2x.jpg);
   }
 
   @include mediaInBetween('tablet', 'desktop') {
     max-width: 768px;
 
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../images/decoration/hero-bg_tablet.jpg);
+    background-image: $heroGradient, url(../images/decoration/hero-bg_tablet.jpg);
+    background-size: 768px auto;
+
+    @include mediaScreenDensity2x {
+      background-image: $heroGradient, url(../images/decoration/hero-bg_tablet@2x.jpg);
+    }
   }
 
   @include mediaUpTo('desktop') {
@@ -33,8 +38,12 @@
     padding: 200px 0;
     max-width: 1600px;
 
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url(../images/decoration/hero-bg_desktop.jpg);
+    background-image: $heroGradient, url(../images/decoration/hero-bg_desktop.jpg);
+    background-size: 1600px auto;
+
+    @include mediaScreenDensity2x {
+      background-image: $heroGradient, url(../images/decoration/hero-bg_desktop@2x.jpg);
+    }
   }
 }
 

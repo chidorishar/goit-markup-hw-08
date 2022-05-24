@@ -61,7 +61,7 @@
 
   color: getColorFromPalette('primary', 'dark');
 
-  @include mediaUpTo('desktop') {
+  @include mediaUpTo('tablet') {
     text-align: center;
   }
 }

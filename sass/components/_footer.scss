@@ -5,14 +5,32 @@
 }
 
 .footer__container {
-  @extend %flex;
-  align-items: flex-start;
+  @include mediaUpTo('desktop') {
+    text-align: center;
+  }
+
+  @include mediaOver('tablet') {
+    display: flex;
+    align-items: baseline;
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+  }
 }
 
 //#region INFO
 
 .footer__studio-info {
-  margin-right: 70px;
+  @include mediaUpTo('desktop') {
+    margin-bottom: 60px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-right: 70px;
+  }
 }
 
 .footer__logo {
@@ -52,8 +70,6 @@
 }
 
 %local-wrapper {
-  padding-top: 12px;
-
   color: getColorFromPalette('primary', 'light');
 }
 //#endregion local placeholders
@@ -62,7 +78,13 @@
 .footer__follow-us {
   @extend %local-wrapper;
 
-  margin-right: 93px;
+  @include mediaUpTo('desktop') {
+    margin-bottom: 60px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-right: 93px;
+  }
 }
 
 .footer__follow-subtitle {
@@ -77,29 +99,37 @@
 
 //#region SUBSCRIBE
 .footer__subscribe {
-  @extend %flex;
   @extend %local-wrapper;
 
-  flex-wrap: wrap;
-  max-width: 570px;
-  min-width: 450px;
-  margin-bottom: -20px;
+  max-width: 450px;
+  min-width: 320px - $containerLRPaddings * 2;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @include mediaOver('desktop') {
+    display: flex;
+    flex-wrap: wrap;
+
+    max-width: 570px;
+    margin-bottom: -20px;
+  }
 }
 
 .footer__subscribe-subtitle {
   @extend %local-subtitle;
+  display: block;
+  width: 100%;
 }
 
 .footer__mail-input {
   @extend %input;
 
-  flex-shrink: 0;
-  flex-grow: 1;
-  min-width: 358px;
-  height: 50px;
-  margin-right: 12px;
-  margin-bottom: 20px;
   padding-left: 16px;
+  margin-bottom: 20px;
+  height: 50px;
 
   border: 1px solid rgba(getColorFromPalette('primary', 'light'), $alpha: 0.3);
   background-color: transparent;
@@ -112,16 +142,36 @@
 
     color: rgba(getColorFromPalette('primary', 'light'), $alpha: 0.6);
   }
+
+  @include mediaUpTo('desktop') {
+    display: block;
+
+    width: 100%;
+  }
+
+  @include mediaOver('desktop') {
+    max-width: 358px;
+    margin-right: 12px;
+    flex-shrink: 0.7;
+    flex-grow: 1;
+  }
 }
 
 .footer__button-send {
   @extend %button--main;
   @extend %flex--v-centred;
 
-  margin-bottom: 20px;
   $padding-r-l: 28px;
   padding-right: $padding-r-l;
   padding-left: $padding-r-l;
+
+  @include mediaUpTo('desktop') {
+    margin: 0 auto;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 20px;
+  }
 }
 
 .footer__button-icon {

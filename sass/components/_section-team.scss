@@ -51,6 +51,18 @@
   background-color: getColorFromPalette('primary', 'light');
 }
 
+.section-team__photo {
+  width: 450px;
+
+  @include mediaInBetween('tablet', 'desktop') {
+    width: 354px;
+  }
+
+  @include mediaOver('desktop') {
+    width: 270px;
+  }
+}
+
 .section-team__card-meta {
   padding: 30px 32px;
 }

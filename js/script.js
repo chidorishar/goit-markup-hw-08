@@ -37,6 +37,5 @@ function toggleModal() {
 }
 
 function toggleMenu() {
-  menuToggle.classList.toggle('is-touched');
   header.classList.toggle('is-fullscreen');
 }

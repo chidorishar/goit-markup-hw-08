@@ -3,6 +3,12 @@
   align-items: center;
 }
 
+@mixin flex--vh-centred {
+  @include flex--v-centred;
+
+  justify-content: center;
+}
+
 @mixin flex-grid-container($marginTop, $marginLeft, $allowWarp: false) {
   display: flex;
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Портфолио</title>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,6 +82,7 @@
         <div class="container">
           <!-- HERO -->
           <h1 class="section-portfolio__section-title">Портфолио</h1>
+
           <!-- filters -->
           <ul class="section-portfolio__filters">
             <li class="section-portfolio__filter">
@@ -126,18 +127,45 @@
               </button>
             </li>
           </ul>
+
           <!-- Cards -->
           <ul class="section-portfolio__projects">
             <li class="section-portfolio__card js-util-web-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/technocrack.jpg"
-                    alt="Ноутбук с открытой страницей веб-сайта в браузере"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-1-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-1-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-1-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-1-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-1-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-1-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-1-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -154,13 +182,39 @@
             <li class="section-portfolio__card js-util-design-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/basketball-players.jpg"
-                    alt="Двое баскетболистов борются за мяч"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-2-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-2-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-2-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-2-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-2-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-2-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-2-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -179,13 +233,39 @@
             <li class="section-portfolio__card js-util-app-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/seafood.jpg"
-                    alt="Название-логотип ресторана на фоне силуэта рыбы"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-3-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-3-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-3-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-3-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-3-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-3-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-3-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -204,13 +284,39 @@
             <li class="section-portfolio__card js-util-marketing-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/headphones.jpg"
-                    alt="Чёрные наушники"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-4-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-4-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-4-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-4-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-4-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-4-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-4-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -229,13 +335,39 @@
             <li class="section-portfolio__card js-util-app-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/boxes.jpg"
-                    alt="Две коробки лежат на плоскости"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-5-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-5-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-5-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-5-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-5-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-5-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-5-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -254,13 +386,39 @@
             <li class="section-portfolio__card js-util-web-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/no-borders.jpg"
-                    alt="На мониторе отображается открытая страница веб-сайта"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-6-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-6-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-6-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-6-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-6-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-6-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-6-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -279,13 +437,39 @@
             <li class="section-portfolio__card js-util-design-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/book.jpg"
-                    alt="Разворот лежащей книги"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-7-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-7-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-7-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-7-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-7-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-7-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-7-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -304,13 +488,39 @@
             <li class="section-portfolio__card js-util-marketing-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/tag.jpg"
-                    alt="Висящая бирка с английской надписью чёрным шрифтом"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-8-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-8-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-8-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-8-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-8-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-8-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-8-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании
@@ -329,13 +539,39 @@
             <li class="section-portfolio__card js-util-app-card">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
-                  <img
-                    class="section-portfolio__card-img"
-                    src="./images/content/portfolio/growing-business.jpg"
-                    alt="Человек работает в приложении за ноутбуком"
-                    width="370"
-                    height="294"
-                  />
+                  <picture class="section-portfolio__img-pic-wrapper">
+                    <source
+                      srcset="
+                        ./images/content/portfolio/mobile/project-9-450.jpg    450w,
+                        ./images/content/portfolio/mobile/project-9-450@2x.jpg 900w
+                      "
+                      media="(max-width: 767.98px)"
+                      sizes="450px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/tablet/project-9-354.jpg    354w,
+                        ./images/content/portfolio/tablet/project-9-354@2x.jpg 708w
+                      "
+                      media="(min-width: 768px) and (max-width: 1199.98px)"
+                      sizes="354px"
+                    />
+                    <source
+                      srcset="
+                        ./images/content/portfolio/desktop/project-9-370.jpg    370w,
+                        ./images/content/portfolio/desktop/project-9-370@2x.jpg 740w
+                      "
+                      media="(min-width: 1200px)"
+                      sizes="370px"
+                    />
+                    <img
+                      class="section-portfolio__card-img"
+                      src="./images/content/portfolio/tablet/project-9-354.jpg"
+                      alt="Ноутбук с открытой страницей веб-сайта в браузере"
+                      width="370"
+                      height="294"
+                    />
+                  </picture>
                   <p class="section-portfolio__proj-details">
                     Ресурс предлагает комплексные предложения с разным уровнем функционала и
                     сервисов. Все это позволит посетителю получить исчерпывающие сведения о компании

@@ -2,7 +2,6 @@
   @extend %section;
 
   margin: 0;
-  padding: 94px 0;
 }
 
 .section-portfolio__section-title {
@@ -11,15 +10,26 @@
 
 .section-portfolio__filters {
   @extend %unmarked-list;
-  @extend %flex--vh-centred;
 
-  margin-bottom: 50px;
+  @include flex-grid-container(15px, 8px, true);
+
+  margin-bottom: 40px;
+
+  @include mediaOver('tablet') {
+    justify-content: center;
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    margin-bottom: 30px;
+  }
+
+  @include mediaOver('desktop') {
+    margin-bottom: 50px;
+  }
 }
 
 .section-portfolio__filter {
-  &:not(:last-child) {
-    margin-right: 8px;
-  }
+  @include flex-grid-item(15px, 8px, $allowResize: true, $quantityInRow: 2);
 }
 
 .section-portfolio__button-filter {
@@ -36,22 +46,49 @@
 .section-portfolio__projects {
   @extend %unmarked-list;
 
-  @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+  @include mediaOver('tablet') {
+    @include flex-grid-container($itemsDefaultMargin, $itemsDefaultMargin, true);
+  }
 }
 
 .section-portfolio__card {
-  @include flex-grid-item(
-    $itemsDefaultMargin,
-    $itemsDefaultMargin,
-    $allowResize: true,
-    $quantityInRow: 3
-  );
+  &:not(.hidden) {
+    display: block;
+  }
+
+  @include mediaUpTo('tablet') {
+    &:not(:last-child) {
+      margin-bottom: $itemsDefaultMargin;
+    }
+  }
+
+  @include mediaOver('tablet') {
+    &:not(.hidden) {
+      display: flex;
+    }
+  }
+
+  @include mediaInBetween('tablet', 'desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 2
+    );
+  }
+
+  @include mediaOver('desktop') {
+    @include flex-grid-item(
+      $itemsDefaultMargin,
+      $itemsDefaultMargin,
+      $allowResize: true,
+      $quantityInRow: 3
+    );
+  }
 }
 
 .section-portfolio__card-link {
   @extend %clean-link;
-
-  display: block;
 
   transition: createTransitionFor('box-shadow');
 
@@ -59,6 +96,11 @@
   &:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
       1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  @include mediaOver('tablet') {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -97,6 +139,10 @@
 
   border: 1px solid #eee;
   border-top: none;
+
+  @include mediaOver('tablet') {
+    flex-grow: 1;
+  }
 }
 
 .section-portfolio__meta-subtitle {

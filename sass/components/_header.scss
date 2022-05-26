@@ -60,6 +60,7 @@ body {
 
 .header__nav {
   @extend %flex--v-centred;
+
   @include mediaUpTo('tablet') {
     margin-right: auto;
   }

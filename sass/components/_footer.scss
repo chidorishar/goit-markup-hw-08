@@ -35,11 +35,13 @@
 
 .footer__logo {
   display: inline-block;
+
   margin-bottom: 20px;
 }
 
 .footer__addresses-list {
   @extend %unmarked-list;
+
   line-height: 1.71;
 
   color: getColorFromPalette('primary', 'light');
@@ -120,6 +122,7 @@
 
 .footer__subscribe-subtitle {
   @extend %local-subtitle;
+
   display: block;
   width: 100%;
 }
@@ -150,10 +153,11 @@
   }
 
   @include mediaOver('desktop') {
-    max-width: 358px;
-    margin-right: 12px;
     flex-shrink: 0.7;
     flex-grow: 1;
+
+    max-width: 358px;
+    margin-right: 12px;
   }
 }
 

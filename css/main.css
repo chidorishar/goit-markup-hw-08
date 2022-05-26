@@ -742,13 +742,13 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .footer__mail-input {
-    max-width: 358px;
-    margin-right: 12px;
     -ms-flex-negative: 0.7;
         flex-shrink: 0.7;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    max-width: 358px;
+    margin-right: 12px;
   }
 }
 

@@ -1,3 +1,9 @@
+body {
+  &.is-modal-shown {
+    overflow: hidden;
+  }
+}
+
 .modal {
   position: fixed;
   top: 0px;
@@ -21,11 +27,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
+
   width: calc(100% - $containerLRPaddings * 2);
   min-width: 320px;
   max-width: getBreakpointValue('mobile') - $containerLRPaddings * 2;
-  min-height: 581px;
+  max-height: calc(100vh - $containerLRPaddings * 2);
   padding: 40px;
+  overflow-y: scroll;
 
   border-radius: 4px;
 

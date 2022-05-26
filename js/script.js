@@ -47,6 +47,7 @@ function onFiltersClick() {
 }
 
 function toggleModal() {
+  document.body.classList.toggle('is-modal-shown');
   modal.classList.toggle('is-hidden');
 }
 

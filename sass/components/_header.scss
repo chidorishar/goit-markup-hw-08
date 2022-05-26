@@ -3,6 +3,10 @@ $headerMobileHeight: 60px;
 body {
   @include mediaUpTo('tablet') {
     padding-top: $headerMobileHeight;
+
+    &.is-header-fullscreen {
+      overflow: hidden;
+    }
   }
 }
 
@@ -31,6 +35,7 @@ body {
     &.is-fullscreen {
       padding-bottom: 48px;
       transform: translateY(calc(100% - $headerMobileHeight));
+      overflow-y: scroll;
     }
   }
 }

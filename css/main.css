@@ -261,6 +261,9 @@ body {
   body {
     padding-top: 60px;
   }
+  body.is-header-fullscreen {
+    overflow: hidden;
+  }
 }
 
 .header {
@@ -287,6 +290,7 @@ body {
     padding-bottom: 48px;
     -webkit-transform: translateY(calc(100% - 60px));
             transform: translateY(calc(100% - 60px));
+    overflow-y: scroll;
   }
 }
 

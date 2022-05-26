@@ -51,5 +51,6 @@ function toggleModal() {
 }
 
 function toggleMenu() {
+  document.body.classList.toggle('is-header-fullscreen');
   header.classList.toggle('is-fullscreen');
 }

@@ -1,8 +1,8 @@
-$headerTabletHeight: 60px;
+$headerMobileHeight: 60px;
 
 body {
   @include mediaUpTo('tablet') {
-    padding-top: $headerTabletHeight;
+    padding-top: $headerMobileHeight;
   }
 }
 
@@ -19,48 +19,60 @@ body {
 
   @include mediaUpTo('tablet') {
     position: absolute;
-    top: calc(-100vh + $headerTabletHeight);
+    top: calc(-100vh + $headerMobileHeight);
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 10px 0;
 
     transition: createTransitionFor('transform');
 
     &.is-fullscreen {
-      transform: translateY(calc(100% - $headerTabletHeight));
+      padding-bottom: 48px;
+      transform: translateY(calc(100% - $headerMobileHeight));
     }
   }
 }
 
 .header__container {
-  @extend %flex--vh-centred;
+  @extend %flex;
+
+  position: relative;
 
   @include mediaUpTo('tablet') {
     .header.is-fullscreen & {
-      align-items: flex-start;
-      flex-wrap: wrap;
+      flex-direction: column;
       padding-left: 40px;
       height: 100%;
     }
+  }
+
+  @include mediaOver('tablet') {
+    @include flex--vh-centred;
   }
 }
 
 .header__nav {
   @extend %flex--v-centred;
+  @include mediaUpTo('tablet') {
+    margin-right: auto;
+  }
 }
 
 .header__logo {
   margin-bottom: 0px;
-  margin-right: 88px;
-
-  .header.is-fullscreen & {
-    display: none;
-  }
 
   @include mediaUpTo('tablet') {
     position: relative;
-    top: calc(100vh - $headerTabletHeight);
+    top: 0;
+    transform: translateY(calc(100vh - 100% - ($headerMobileHeight - 100%) / 2));
+
+    .header.is-fullscreen & {
+      display: none;
+    }
+  }
+
+  @include mediaOver('tablet') {
+    margin-right: 88px;
   }
 
   @include mediaOver('desktop') {
@@ -79,7 +91,7 @@ body {
     line-height: 1.175;
 
     display: none;
-    padding-top: 38px;
+    padding-top: 48px;
 
     header.is-fullscreen & {
       display: block;
@@ -137,15 +149,13 @@ body {
 
   @include mediaUpTo('tablet') {
     display: none;
+
+    flex-direction: column-reverse;
+    margin-top: auto;
     margin-bottom: 64px;
 
     .header.is-fullscreen & {
       display: flex;
-      flex-direction: column-reverse;
-      align-self: flex-end;
-      order: 1;
-
-      width: 100%;
     }
   }
 
@@ -224,15 +234,63 @@ body {
   }
 }
 
+.header__company-socials {
+  @extend %unmarked-list;
+
+  display: none;
+
+  flex-wrap: wrap;
+
+  @include mediaUpTo('tablet') {
+    .header.is-fullscreen & {
+      @include flex--v-centred;
+    }
+  }
+
+  @include mediaOver('tablet') {
+    display: none;
+  }
+}
+
+.header__social-item {
+  position: relative;
+
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: getFontWeight('medium');
+
+  color: getColorFromPalette('accent', 'light');
+
+  &:not(:last-child) {
+    margin-right: 20px;
+
+    &::after {
+      position: absolute;
+
+      content: '';
+      right: -10px;
+      width: 1px;
+      height: 100%;
+      background-color: rgba(getColorFromPalette('primary', 'dark'), 0.1);
+    }
+  }
+}
+
+.header__social-link {
+  @extend %clean-link;
+}
+
 .header__toggle-menu-button {
   @include mediaUpTo('tablet') {
-    position: relative;
-    transform: translateY(calc(100vh - 60px));
-    $w-h: 44px;
+    $w-h: 40px;
 
-    margin-left: auto;
+    position: absolute;
+    transform: translateY(calc(100vh - 100% - ($headerMobileHeight - 100%) / 2));
+
     width: $w-h;
     height: $w-h;
+    right: $containerLRPaddings;
+    top: 0;
 
     border: none;
     background-color: transparent;
@@ -241,7 +299,7 @@ body {
     transition: createTransitionFor('transform');
 
     .header.is-fullscreen & {
-      transform: translateY(0);
+      transform: translateY(calc(($headerMobileHeight - 100%) / 2));
     }
   }
 

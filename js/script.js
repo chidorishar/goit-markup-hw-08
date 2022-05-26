@@ -8,11 +8,25 @@ const modalControls = {
 const menuToggle = document.getElementById('toggle-menu');
 const header = document.getElementById('header');
 
-filters.forEach(f => f.addEventListener('click', onFiltersClick));
-Object.keys(modalControls).forEach(key =>
-  modalControls[key].addEventListener('click', toggleModal)
-);
-menuToggle.addEventListener('click', toggleMenu);
+//add listeners
+try {
+  try {
+    filters.forEach(f => f.addEventListener('click', onFiltersClick));
+  } finally {
+    try {
+      Object.keys(modalControls).forEach(key =>
+        modalControls[key].addEventListener('click', toggleModal)
+      );
+    } finally {
+      try {
+        menuToggle.addEventListener('click', toggleMenu);
+      } finally {
+      }
+    }
+  }
+} catch (error) {
+  console.error(error);
+}
 
 function onFiltersClick() {
   // unhide previously hidden cards

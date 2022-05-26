@@ -19,10 +19,12 @@ body {
 
   @include mediaUpTo('tablet') {
     position: absolute;
+
     top: calc(-100vh + $headerMobileHeight);
     left: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 10;
 
     transition: createTransitionFor('transform');
 

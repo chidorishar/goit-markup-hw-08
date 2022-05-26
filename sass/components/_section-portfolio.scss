@@ -111,6 +111,7 @@
 }
 
 .section-portfolio__proj-details {
+  @extend %flex--v-centred;
   font-size: 18px;
   line-height: 1.55;
 
@@ -120,7 +121,7 @@
   transform: translateY(100%);
   width: 100%;
   height: 100%;
-  padding: 17% 24px;
+  padding: 10px 24px;
 
   background-color: rgba(getColorFromPalette('accent', 'light'), $alpha: 0.9);
   color: getColorFromPalette('primary', 'light');

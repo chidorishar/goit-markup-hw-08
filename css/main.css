@@ -53,13 +53,13 @@
   color: #2196f3;
 }
 
-.header__container, .section-clients__link, .section-services__img-description, .section-advantages__icon-wrapper, .modal__close-button, .socials__link, .modal__agree-label, .modal__request-form, .footer__button-send, .header__contact-link, .header__nav {
+.header__container, .section-clients__link, .section-services__img-description, .section-advantages__icon-wrapper, .modal__close-button, .socials__link, .section-portfolio__proj-details, .modal__agree-label, .modal__request-form, .footer__button-send, .header__contact-link, .header__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.modal__agree-label, .modal__request-form, .footer__button-send, .header__contact-link, .header__nav {
+.section-portfolio__proj-details, .modal__agree-label, .modal__request-form, .footer__button-send, .header__contact-link, .header__nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -160,6 +160,7 @@ img {
   display: block;
   height: auto;
   width: 100%;
+  max-width: 100%;
 }
 
 input:active,
@@ -775,9 +776,7 @@ body {
   background-clip: border-box;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 480px auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
   color: #fff;
 }
 @media screen and (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -1438,7 +1437,7 @@ body {
           transform: translateY(100%);
   width: 100%;
   height: 100%;
-  padding: 17% 24px;
+  padding: 10px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   color: #fff;
   overflow: auto;

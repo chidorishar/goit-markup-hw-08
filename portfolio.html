@@ -28,8 +28,22 @@
 
   <body>
     <!-- HEADER -->
-    <header class="header">
+    <header id="header" class="header">
       <div class="header__container container">
+        <!-- MENU BUTTON -->
+        <button id="toggle-menu" class="header__toggle-menu-button" type="button">
+          <svg class="header_button-icon" width="40" height="40">
+            <use
+              class="header_button-icon-open"
+              href="./images/decoration/icons.svg#menu-open"
+            ></use>
+            <use
+              class="header_button-icon-close"
+              href="./images/decoration/icons.svg#menu-close"
+            ></use>
+          </svg>
+        </button>
+
         <!-- NAVIGATION -->
         <nav class="header__nav">
           <a class="header__logo logo" href="./index.html" lang="en">
@@ -70,6 +84,52 @@
               </svg>
               +38 096 111 11 11
             </a>
+          </li>
+        </ul>
+
+        <!-- SOCIALS -->
+        <ul class="header__company-socials">
+          <li class="header__social-item">
+            <a
+              href="https://www.instagram.com"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ссылка на аккаунт в инстаграме"
+              >Instagram
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a
+              href="https://www.twitter.com"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ссылка на аккаунт в твиттере"
+            >
+              Twitter
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a
+              href="https://www.facebook.com"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ссылка на аккаунт в фейсбуке"
+            >
+              Facebook
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a
+              href="https://www.linkedin.com"
+              class="header__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ссылка на аккаунт в линкедин"
+              >LinkedIn</a
+            >
           </li>
         </ul>
       </div>

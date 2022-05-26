@@ -315,17 +315,17 @@ body {
   }
 }
 
-.header_button-icon {
+.header__button-icon {
   @extend %icon;
 }
 
-.header_button-icon-open {
+.header__button-icon-open {
   .header.is-fullscreen & {
     display: none;
   }
 }
 
-.header_button-icon-close {
+.header__button-icon-close {
   .header:not(.is-fullscreen) & {
     display: none;
   }

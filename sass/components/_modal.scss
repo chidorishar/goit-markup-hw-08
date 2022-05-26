@@ -186,12 +186,14 @@
 }
 
 .modal__agree-icon {
+  @extend %icon;
+
   flex-shrink: 0;
   margin-right: 7px;
 
   border: 2px solid getColorFromPalette('primary', 'dark');
   border-radius: 2px;
-  fill: transparent;
+  color: transparent;
 
   transition: createTransitionFor('background-color' 'border-width' 'fill');
 

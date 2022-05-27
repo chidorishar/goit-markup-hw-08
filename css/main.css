@@ -291,7 +291,7 @@ body {
     padding-bottom: 48px;
     -webkit-transform: translateY(calc(100% - 60px));
             transform: translateY(calc(100% - 60px));
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 
@@ -873,7 +873,7 @@ body.is-modal-shown {
   max-width: 450px;
   max-height: calc(100vh - 30px);
   padding: 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-radius: 4px;
   background-color: #fff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);

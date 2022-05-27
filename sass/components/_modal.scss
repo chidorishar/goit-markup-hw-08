@@ -33,7 +33,7 @@ body {
   max-width: getBreakpointValue('mobile') - $containerLRPaddings * 2;
   max-height: calc(100vh - $containerLRPaddings * 2);
   padding: 40px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   border-radius: 4px;
 

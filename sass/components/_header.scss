@@ -35,7 +35,7 @@ body {
     &.is-fullscreen {
       padding-bottom: 48px;
       transform: translateY(calc(100% - $headerMobileHeight));
-      overflow-y: scroll;
+      overflow-y: auto;
     }
   }
 }

@@ -17,7 +17,7 @@ body {
 
   transition: createTransitionFor('opacity');
 
-  &.is-hidden {
+  body:not(.is-modal-shown) & {
     opacity: 0;
     pointer-events: none;
   }
@@ -45,7 +45,7 @@ body {
   transform: translate(-50%, -50%) scale(1, 1);
   transition: createTransitionFor('transform');
 
-  .modal.is-hidden & {
+  body:not(.is-modal-shown) & {
     transform: translate(-50%, -50%) scale(0.1, 0.1);
 
     pointer-events: none;

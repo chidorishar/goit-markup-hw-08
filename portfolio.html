@@ -23,7 +23,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/main.min.css" />
     <!-- JS -->
-    <script src="./js/script.js" defer></script>
+    <script src="./js/mobile-menu.js" type="module" defer></script>
+    <script src="./js/filters.js" type="module" defer></script>
   </head>
 
   <body>
@@ -144,34 +145,34 @@
           <h1 class="section-portfolio__section-title">Портфолио</h1>
 
           <!-- filters -->
-          <ul class="section-portfolio__filters">
+          <ul id="filters-wrapper" class="section-portfolio__filters">
             <li class="section-portfolio__filter">
               <button
-                id="all-button-filter"
                 class="section-portfolio__button-filter section-portfolio__button-filter--active"
                 type="button"
+                data-filter-type="all"
               >
                 Все
               </button>
             </li>
 
             <li class="section-portfolio__filter">
-              <button id="web-button-filter" class="section-portfolio__button-filter" type="button">
+              <button class="section-portfolio__button-filter" type="button" data-filter-type="web">
                 Веб-сайты
               </button>
             </li>
 
             <li class="section-portfolio__filter">
-              <button id="app-button-filter" class="section-portfolio__button-filter" type="button">
+              <button class="section-portfolio__button-filter" type="button" data-filter-type="app">
                 Приложения
               </button>
             </li>
 
             <li class="section-portfolio__filter">
               <button
-                id="design-button-filter"
                 class="section-portfolio__button-filter"
                 type="button"
+                data-filter-type="design"
               >
                 Дизайн
               </button>
@@ -179,9 +180,9 @@
 
             <li class="section-portfolio__filter">
               <button
-                id="marketing-button-filter"
                 class="section-portfolio__button-filter"
                 type="button"
+                data-filter-type="marketing"
               >
                 Маркетинг
               </button>
@@ -190,7 +191,7 @@
 
           <!-- Cards -->
           <ul class="section-portfolio__projects">
-            <li class="section-portfolio__card js-util-web-card">
+            <li class="section-portfolio__card" data-card-type="web">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -239,7 +240,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-design-card">
+            <li class="section-portfolio__card" data-card-type="design">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -290,7 +291,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-app-card">
+            <li class="section-portfolio__card" data-card-type="app">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -341,7 +342,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-marketing-card">
+            <li class="section-portfolio__card" data-card-type="marketing">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -392,7 +393,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-app-card">
+            <li class="section-portfolio__card" data-card-type="app">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -443,7 +444,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-web-card">
+            <li class="section-portfolio__card" data-card-type="web">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -494,7 +495,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-design-card">
+            <li class="section-portfolio__card" data-card-type="design">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -545,7 +546,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-marketing-card">
+            <li class="section-portfolio__card" data-card-type="marketing">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">
@@ -596,7 +597,7 @@
               </a>
             </li>
 
-            <li class="section-portfolio__card js-util-app-card">
+            <li class="section-portfolio__card" data-card-type="app">
               <a class="section-portfolio__card-link" href="./">
                 <div class="section-portfolio__img-wrapper">
                   <picture class="section-portfolio__img-pic-wrapper">

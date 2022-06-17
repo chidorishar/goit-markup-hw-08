@@ -31,4 +31,5 @@ input:focus,
 textarea:active,
 textarea:focus {
   outline: none;
+  overflow-x: hidden;
 }

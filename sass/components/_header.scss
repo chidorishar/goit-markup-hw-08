@@ -32,7 +32,7 @@ body {
 
     transition: createTransitionFor('transform');
 
-    &.is-fullscreen {
+    body.is-header-fullscreen & {
       padding-bottom: 48px;
       transform: translateY(calc(100% - $headerMobileHeight));
       overflow-y: auto;
@@ -46,7 +46,7 @@ body {
   position: relative;
 
   @include mediaUpTo('tablet') {
-    .header.is-fullscreen & {
+    body.is-header-fullscreen & {
       flex-direction: column;
       padding-left: 40px;
       height: 100%;
@@ -74,7 +74,7 @@ body {
     top: 0;
     transform: translateY(calc(100vh - 100% - ($headerMobileHeight - 100%) / 2));
 
-    .header.is-fullscreen & {
+    body.is-header-fullscreen & {
       display: none;
     }
   }
@@ -101,7 +101,7 @@ body {
     display: none;
     padding-top: 48px;
 
-    header.is-fullscreen & {
+    body.is-header-fullscreen & {
       display: block;
     }
   }
@@ -162,7 +162,7 @@ body {
     margin-top: auto;
     margin-bottom: 64px;
 
-    .header.is-fullscreen & {
+    body.is-header-fullscreen & {
       display: flex;
     }
   }
@@ -250,7 +250,7 @@ body {
   flex-wrap: wrap;
 
   @include mediaUpTo('tablet') {
-    .header.is-fullscreen & {
+    body.is-header-fullscreen & {
       @include flex--v-centred;
     }
   }
@@ -307,7 +307,7 @@ body {
 
     transition: createTransitionFor('transform');
 
-    .header.is-fullscreen & {
+    body.is-header-fullscreen & {
       transform: translateY(calc(($headerMobileHeight - 100%) / 2));
     }
   }
@@ -322,13 +322,13 @@ body {
 }
 
 .header__button-icon-open {
-  .header.is-fullscreen & {
+  body.is-header-fullscreen & {
     display: none;
   }
 }
 
 .header__button-icon-close {
-  .header:not(.is-fullscreen) & {
+  body:not(.is-header-fullscreen) & {
     display: none;
   }
 }

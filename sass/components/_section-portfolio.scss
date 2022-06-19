@@ -52,6 +52,10 @@
 }
 
 .section-portfolio__card {
+  // transform-origin: bottom left;
+  transform-origin: center left;
+  transition: createTransitionFor('transform'), position 0ms ease 250ms;
+
   &:not(.hidden) {
     display: block;
   }

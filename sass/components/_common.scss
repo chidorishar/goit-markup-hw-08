@@ -17,3 +17,10 @@
 .hidden {
   display: none;
 }
+
+.js-animate-card-appearance {
+  opacity: 0;
+  // transform: rotateZ(-90deg);
+  transform: scaleX(0);
+  // position: absolute;
+}

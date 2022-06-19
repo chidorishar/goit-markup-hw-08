@@ -4,13 +4,20 @@ const domEls = {
   activeFilter: document.querySelector('.section-portfolio__button-filter--active'),
 };
 const sleep = delay => new Promise(resolve => setTimeout(resolve, delay));
+const cardAnimationDuration = 250;
 
 domEls.filtersWrapper.addEventListener('click', onCardSetFiltering);
 
-async function animateCardAppearance(card) {
+async function hideCardWithAnimation(card) {
   card.classList.add('js-animate-card-appearance');
-  await sleep(150);
-  card.classList.remove('js-animate-card-appearance');
+  setTimeout(() => card.classList.add('hidden'), cardAnimationDuration);
+}
+
+async function unhideCardWithAnimation(card) {
+  card.classList.add('js-animate-card-appearance');
+  setTimeout(() => card.classList.remove('hidden'), cardAnimationDuration);
+  await sleep(50);
+  setTimeout(() => card.classList.remove('js-animate-card-appearance'), cardAnimationDuration);
 }
 
 function onCardSetFiltering(event) {
@@ -25,19 +32,13 @@ function onCardSetFiltering(event) {
   clickedEl.classList.add('section-portfolio__button-filter--active');
   domEls.activeFilter = clickedEl;
   if (filterBy === 'all') {
-    domEls.cards.forEach(card => {
-      animateCardAppearance(card);
-      card.classList.remove('hidden');
-    });
+    domEls.cards.forEach(card => unhideCardWithAnimation(card));
     return;
   }
   //process cards
   domEls.cards.forEach(card => {
-    if (card.dataset.cardType === filterBy) {
-      animateCardAppearance(card);
-      card.classList.remove('hidden');
-    } else {
-      card.classList.add('hidden');
-    }
+    card.dataset.cardType === filterBy
+      ? unhideCardWithAnimation(card)
+      : hideCardWithAnimation(card);
   });
 }
